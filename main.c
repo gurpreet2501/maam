@@ -1,7 +1,9 @@
 #include <stdio.h>
-// exit, fopen
 #include <stdlib.h> 
 #include <string.h>
+
+#include <direct.h> // for _mkdir
+
 #include "./helper/code_gen.h" // load helper function
 
 #define WEB_ADDR_BUFF (100)
@@ -30,10 +32,8 @@ static const char host_path[] = "C:/Windows/System32/drivers/etc/hosts";
 // create full path
 void create_site_dir()
 {
-    int status;
-    status = mkdir(webiste_path);
 
-    if (status < 0){
+    if (_mkdir(webiste_path) == -1){
         printf("Error: unable to create Dir \"%s\"\n", webiste_path);
         exit(1);
     }

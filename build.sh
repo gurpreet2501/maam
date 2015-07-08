@@ -1,1 +1,1 @@
-gcc main.c ./helper/code_gen.c && ./a.exe
+gcc main.c ./helper/code_gen.c -o maam.exe -std=c99 && ./maam.exe
